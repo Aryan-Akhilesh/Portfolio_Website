@@ -20,18 +20,24 @@ with col2:
 st.write("""<h5> Below you can find some of the apps that I have built in python.
             Feel free to contact me!</h5>""", unsafe_allow_html=True)
 
-col3, col4 = st.columns(2)
+col3, empty_col, col4 = st.columns([1.5, 0.5, 1.5])
 
 # Creates a data frame of the data. We use ";" as the seperator
 df = pandas.read_csv("data.csv", sep=";")
 
 # We iterate over the data frame's rows as index, row since
 # iterrows uses (index,series) pair
-# We then display the first 10 rows of the "title" column in col3
+# We then display the first 10 rows of the "title",and other columns in col3
 with col3:
     for index, row in df[:10].iterrows():
         st.header(row["title"])
+        st.write(row["description"])
+        st.image("images/"+row["image"])
+        st.write(f"[Source Code]({row['url']})")
 
 with col4:
-    for index,row in df[10:].iterrows():
+    for index, row in df[10:].iterrows():
         st.header(row["title"])
+        st.write(row["description"])
+        st.image("images/"+row["image"])
+        st.write(f"[Source Code]({row['url']})")
