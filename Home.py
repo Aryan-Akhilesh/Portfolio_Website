@@ -29,14 +29,14 @@ df = pandas.read_csv("data.csv", sep=";")
 # iterrows uses (index,series) pair
 # We then display the first 10 rows of the "title",and other columns in col3
 with col3:
-    for index, row in df[:10].iterrows():
+    for index, row in df[:5].iterrows():
         st.header(row["title"])
         st.write(row["description"])
         st.image("images/"+row["image"])
         st.write(f"[Source Code]({row['url']})")
 
 with col4:
-    for index, row in df[10:].iterrows():
+    for index, row in df[5:].iterrows():
         st.header(row["title"])
         st.write(row["description"])
         st.image("images/"+row["image"])
