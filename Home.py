@@ -15,8 +15,8 @@ with col2:
     content = """Hi,I'm Aryan! I'm currently a 2nd year student at McGill University.
                  I'm pursuing a Bachelor of Science in Software Engineering with a 
                  minor in Mathematics.
-                 I play Soccer and Badminton (Intramurals).
-                 I have started rock climbing as well"""
+                 I play badminton (Intramurals) and do a bit of bouldering as well.
+                   """
     st.info(content)
 
 st.write("""<h5> Below you can find some of the apps that I have built in python.
